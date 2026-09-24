@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="theme-color" content="#1239d8">
+
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg">
+
+  <title>ProTrack</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<main class="app">
+
+  <header class="top">
+    <div class="brand">
+      <img src="icon.svg" alt="ProTrack">
+      <div>
+        <b>ProTrack</b>
+        <small>PRIVATE • OFFLINE • DAILY</small>
+      </div>
+    </div>
+
+    <div class="streak">
+      🔥 <b id="topStreak">0</b> day streak
+    </div>
+  </header>
+
+
+  <nav class="nav">
+    <button id="dayTab" class="active">Day</button>
+    <button id="calTab">Calendar</button>
+    <button id="repTab">Report</button>
+  </nav>
+
+
+  <!-- DAY VIEW -->
+  <section id="dayView" class="view active">
+
+    <div class="hero">
+      <div class="ey" id="weekday"></div>
+
+      <div class="date" id="dateText"></div>
+
+      <div class="sub">
+        Complete every circle to make a perfect strike day.
+      </div>
+
+      <div class="progress">
+        <div class="bar" id="bar"></div>
+      </div>
+
+      <div class="pl">
+        <span id="count"></span>
+        <b id="status">Incomplete</b>
+      </div>
+    </div>
+
+
+    <div class="grid">
+
+      <div class="card">
+        <h2>Today's routine</h2>
+
+        <div class="tasks" id="tasks"></div>
+      </div>
+
+
+      <div>
+
+        <!-- DAILY GOAL -->
+        <div class="card goal">
+          <h2>Daily Goal</h2>
+
+          <textarea
+            id="goal"
+            placeholder="Write today's goal..."
+          ></textarea>
+
+          <br>
+
+          <button class="btn" id="saveGoal">
+            Save Goal
+          </button>
+
+          <span id="saved"></span>
+        </div>
+
+
+        <!-- QUICK STATISTICS -->
+        <div class="card card-gap">
+          <h2>Quick statistics</h2>
+
+          <div class="statrow">
+
+            <div class="stat">
+              <b id="sc">0</b>
+              <span>Complete</span>
+            </div>
+
+            <div class="stat">
+              <b id="si">0</b>
+              <span>Incomplete</span>
+            </div>
+
+            <div class="stat">
+              <b id="sb">0</b>
+              <span>Best streak</span>
+            </div>
+
+          </div>
+        </div>
+
+
+        <!-- REMINDER -->
+        <div class="card card-gap">
+          <h2>Daily reminder</h2>
+
+          <div class="settings">
+            <span>
+              Notify me to finish today's routine
+            </span>
+
+            <button class="toggle" id="toggle">
+              <i></i>
+            </button>
+          </div>
+
+          <div class="time-wrapper">
+            <input
+              id="rtime"
+              type="time"
+              value="21:00"
+            >
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CALENDAR VIEW -->
+  <section id="calView" class="view">
+
+    <div class="card">
+
+      <div class="calhead">
+        <button id="prev">‹</button>
+
+        <b id="month"></b>
+
+        <button id="next">›</button>
+      </div>
+
+
+      <div class="week">
+        <div>Sun</div>
+        <div>Mon</div>
+        <div>Tue</div>
+        <div>Wed</div>
+        <div>Thu</div>
+        <div>Fri</div>
+        <div>Sat</div>
+      </div>
+
+
+      <div class="days" id="days"></div>
+
+
+      <p class="note">
+        Deep blue = perfect day.
+        Grey = incomplete.
+        Future dates are soft.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- REPORT VIEW -->
+  <section id="repView" class="view">
+
+    <div class="card">
+
+      <h1 class="report-title">Report</h1>
+
+
+      <div class="summary">
+
+        <div class="big">
+          <b id="rc">0</b>
+          <span>Complete days</span>
+        </div>
+
+        <div class="big">
+          <b id="ri">0</b>
+          <span>Incomplete days</span>
+        </div>
+
+        <div class="big">
+          <b id="rs">0</b>
+          <span>Strike</span>
+        </div>
+
+      </div>
+
+
+      <h2 class="section-heading">
+        Weekly History
+      </h2>
+
+
+      <div class="card weekly-card">
+
+        <div class="wr" id="wr"></div>
+
+        <p class="note">
+          Blue check = complete.
+          Light blue = activity recorded but incomplete.
+        </p>
+
+      </div>
+
+
+      <h2>Statistics</h2>
+
+
+      <div class="statrow">
+
+        <div class="stat">
+          <b id="rate">0%</b>
+          <span>Completion rate</span>
+        </div>
+
+        <div class="stat">
+          <b id="best">0</b>
+          <span>Personal best</span>
+        </div>
+
+        <div class="stat">
+          <b id="goals">0</b>
+          <span>Goals saved</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
